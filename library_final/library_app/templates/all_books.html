@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>allbooks</title>
+</head>
+<body>
+    <table border="1" cellspacing= '0' >
+        
+          <tr>
+            <td>Title</td>
+            <td>Author</td>
+            <td>Published Date</td>
+            <td>ISBN</td>
+            <td>Actions</td>
+          </tr>
+        
+          {% for books in book %}
+            <tr>
+              <td>{{ books.title }}</td>
+              <td>{{ books.author }}</td>
+              <td>{{ books.published_date }}</td>
+              <td>{{ books.isbn_number }}</td>
+              <td>
+                <a href="{% url 'update_book' books.id %}">Update</a>
+                <a href="{% url 'delete_book' books.id %}">Delete</a>
+              </td>
+            </tr>
+          {% endfor %}
+        
+      </table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create book</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="f1">Title</label>
+            <input type="text" id='f1' name="title" value="{{book.title}}" placeholder="Book Title" required>
+        </div>
+        <div>
+            <label for="f2">Author</label>
+            <input type="text" id='f2' name="author" value="{{book.author}}" placeholder="Author" required>
+        </div>
+        <div>
+            <label for="f3">Published Date</label>
+            <input type="date" id='f3' name="published_date" value="{{book.published_date}}" required>
+        </div>
+
+        <div>
+            <label for="f4">ISBN Number</label>
+            <input type="text" id='f4' name="isbn_number" value="{{book.isbn_number}}" placeholder="ISBN Number" required>
+        </div>
+        
+        
+        <button type="Submit">Add Book</button>
+      </form>
+</body>
+</html>
